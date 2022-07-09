@@ -65,15 +65,15 @@ jobs:
   #         #   fi
   #     - destroy_environments
   # Exercise: Smoke Testing
-smoke_test:
-  docker:
-   - image: alpine:latest
-  steps:
-   - run:
-       name: Test job
-       # Fail the job intentionally to simulate an error.
-       command:  return 1
-   - destroy_environments 
+  smoke_test:
+    docker:
+    - image: alpine:latest
+    steps:
+    - run:
+        name: Test job
+        # Fail the job intentionally to simulate an error.
+        command:  return 1
+    - destroy_environments 
   create_infrastructure: 
       docker:
         - image: amazon/aws-cli
